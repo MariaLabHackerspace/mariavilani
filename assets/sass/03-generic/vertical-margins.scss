@@ -22,12 +22,8 @@
 }
 
 .site-header {
-	padding-top: calc(0.75 * var(--global--spacing-vertical));
-	padding-bottom: calc(2 * var(--global--spacing-vertical));
-
-	@include media(mobile) {
-		padding-bottom: calc(3 * var(--global--spacing-vertical));
-	}
+	padding-bottom: 0;
+	padding-top: calc(1.8 * var(--global--spacing-vertical));
 }
 
 /**

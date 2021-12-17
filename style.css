@@ -167,6 +167,7 @@ sass --watch style.scss ../../style.css
   --mv-orange-light: #f09271;
   --mv-oil-blue: #294c60;
   --mv-golden: #c89b4e;
+  --mv-gray: #50514f;
   --global--color-primary: var(--global--color-white);
   /* Body text color, site title, footer text color. */
   --global--color-secondary: var(--global--color-white);
@@ -770,13 +771,8 @@ template {
 }
 
 .site-header {
-  padding-top: calc(0.75 * var(--global--spacing-vertical));
-  padding-bottom: calc(2 * var(--global--spacing-vertical));
-}
-@media only screen and (min-width: 482px) {
-  .site-header {
-    padding-bottom: calc(3 * var(--global--spacing-vertical));
-  }
+  padding-bottom: 0;
+  padding-top: calc(1.8 * var(--global--spacing-vertical));
 }
 
 /**
@@ -3267,7 +3263,7 @@ table.wp-calendar-table caption {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  row-gap: var(--global--spacing-vertical);
+  row-gap: 0;
 }
 .wp-custom-logo .site-header {
   align-items: center;
@@ -5110,6 +5106,85 @@ footer {
 }
 .is-IE .post-thumbnail .wp-post-image {
   min-width: auto;
+}
+
+/* Theme Custom Styles */
+.site-main {
+  background-color: var(--global--color-white);
+}
+
+.site-main > article {
+  padding-left: var(--global--spacing-horizontal);
+  padding-right: var(--global--spacing-horizontal);
+}
+.site-main > article .homepage-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: var(--global--spacing-vertical);
+}
+.site-main > article .homepage-content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+}
+.site-main > article .homepage-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: var(--global--spacing-vertical);
+}
+.site-main > article .homepage-content .wp-block-buttons ~ h2 {
+  margin-top: var(--global--spacing-vertical);
+}
+.site-main > article .homepage-content p {
+  color: var(--mv-gray);
+  margin-bottom: calc(var(--global--spacing-vertical) / 2);
+}
+.site-main > article figure.wp-block-image img {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+}
+.site-main > article a {
+  color: currentColor;
+}
+
+.site-main #angela {
+  color: var(--mv-orange);
+}
+.site-main #angela .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
+  background-color: var(--mv-orange);
+  color: var(--global--color-white);
+}
+
+.site-main #amarantos {
+  color: var(--mv-oil-blue);
+}
+.site-main #amarantos .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
+  background-color: var(--mv-oil-blue);
+  color: var(--global--color-white);
+}
+
+.site-main #chimamanda {
+  color: var(--mv-golden);
+}
+.site-main #chimamanda .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
+  background-color: var(--mv-golden);
+  color: var(--global--color-white);
+}
+
+#about .contact-title h2,
+#about .women-title h2,
+#about .project-title h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+#about .contact-text,
+#about .women-text,
+#about .project-text {
+  background-color: var(--global--color-white);
+  border-radius: 10px;
+  box-shadow: 0px -10px 0px var(--mv-orange-light);
+  color: var(--mv-gray);
+  padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 }
 
 /*# sourceMappingURL=style.css.map */

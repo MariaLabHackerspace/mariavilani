@@ -35,6 +35,12 @@ get_header(); ?>
     return get_posts($args)[0];
   }
 
+  function parse_the_content ($content) {
+    $content = apply_filters( 'the_content', $content );
+    $content = str_replace( ']]>', ']]&gt;', $content );
+    echo $content;
+  }
+
   $angela = get_page_id_by_slug("angela");
   $amarantos = get_page_id_by_slug("amarantos");
   $chimamanda = get_page_id_by_slug("chimamanda");
@@ -43,28 +49,28 @@ get_header(); ?>
 
   <article id="angela">
     <h1 class="homepage-title">
-      <?php echo $angela->post_title; ?>
+      <?= $angela->post_title; ?>
     </h1>
     <section class="homepage-content">
-    <?= $angela->post_content; ?>
+    <?php parse_the_content($angela->post_content); ?>
     </section>
   </article>
 
   <article id="amarantos">
     <h1 class="homepage-title">
-    <?= $amarantos->post_title; ?>
+      <?= $amarantos->post_title; ?>
     </h1>
     <section class="homepage-content">
-    <?= $amarantos->post_content; ?>
+    <?php parse_the_content($amarantos->post_content); ?>
     </section>
   </article>
 
   <article id="chimamanda">
     <h1 class="homepage-title">
-    <?= $chimamanda->post_title; ?>
+      <?= $chimamanda->post_title; ?>
     </h1>
     <section class="homepage-content">
-    <?= $chimamanda->post_content; ?>
+      <?php parse_the_content($chimamanda->post_content); ?>
     </section>
 
 <?php
