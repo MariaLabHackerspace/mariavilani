@@ -3275,7 +3275,7 @@ table.wp-calendar-table caption {
 }
 @media only screen and (min-width: 822px) {
   .site-header {
-    padding-top: calc(2.4 * var(--global--spacing-vertical));
+    padding-top: 0;
   }
 }
 
@@ -4652,18 +4652,6 @@ h1.page-title {
   font-size: var(--footer--font-size);
   font-family: var(--footer--font-family);
 }
-@media only screen and (min-width: 652px) {
-  .widget-area {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: calc(2 * var(--global--spacing-horizontal));
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .widget-area {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .widget-area ul {
   list-style-type: none;
   padding: 0;
@@ -5114,8 +5102,15 @@ footer {
 }
 
 .site-main > article {
+  margin-left: auto;
+  margin-right: auto;
   padding-left: var(--global--spacing-horizontal);
   padding-right: var(--global--spacing-horizontal);
+}
+@media only screen and (min-width: 822px) {
+  .site-main > article {
+    max-width: 1240px;
+  }
 }
 .site-main > article .homepage-title {
   font-family: "Poppins", sans-serif;
@@ -5170,21 +5165,63 @@ footer {
   color: var(--global--color-white);
 }
 
-#about .contact-title h2,
-#about .women-title h2,
-#about .project-title h2 {
+.widget-area#about section {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 822px) {
+  .widget-area#about {
+    display: grid;
+    gap: var(--global--spacing-horizontal);
+    grid-template-areas: "projeto mulheres" "contato contato";
+  }
+  .widget-area#about > section:first-of-type {
+    grid-area: projeto;
+  }
+  .widget-area#about > section:nth-of-type(2) {
+    grid-area: mulheres;
+  }
+  .widget-area#about > section:last-of-type {
+    grid-area: contato;
+  }
+}
+.widget-area#about .project-title {
+  margin-bottom: var(--global--spacing-unit);
+}
+.widget-area#about .contact-title h2,
+.widget-area#about .women-title h2,
+.widget-area#about .project-title h2 {
   font-family: "Poppins", sans-serif;
   font-size: 2.4rem;
   font-weight: 600;
 }
-#about .contact-text,
-#about .women-text,
-#about .project-text {
+.widget-area#about .contact-text,
+.widget-area#about .women-text,
+.widget-area#about .project-text {
   background-color: var(--global--color-white);
   border-radius: 10px;
   box-shadow: 0px -10px 0px var(--mv-orange-light);
   color: var(--mv-gray);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
   padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
+  text-align: justify;
+}
+.widget-area#about .contact-text p,
+.widget-area#about .women-text p,
+.widget-area#about .project-text p {
+  margin-bottom: calc(var(--global--spacing-vertical) / 1.5);
+}
+.widget-area#about .contact-text p:last-of-type,
+.widget-area#about .women-text p:last-of-type,
+.widget-area#about .project-text p:last-of-type {
+  margin-bottom: 0;
+}
+.widget-area#about .contact-text a,
+.widget-area#about .women-text a,
+.widget-area#about .project-text a {
+  color: var(--mv-orange);
 }
 
 /*# sourceMappingURL=style.css.map */

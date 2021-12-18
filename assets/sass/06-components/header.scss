@@ -15,7 +15,7 @@
 	}
 
 	@include media(desktop) {
-		padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
+		padding-top: 0;
 	}
 }
 
