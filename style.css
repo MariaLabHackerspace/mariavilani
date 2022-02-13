@@ -3720,6 +3720,7 @@ h1.page-title {
 }
 
 .error404 main p {
+  color: var(--mv-orange);
   font-size: var(--global--font-size-lg);
   margin-bottom: calc(var(--global--spacing-vertical) * 1.6666666667);
 }
@@ -5185,6 +5186,7 @@ footer {
     grid-area: contato;
   }
 }
+.widget-area#about .women-title,
 .widget-area#about .project-title {
   margin-bottom: var(--global--spacing-unit);
 }
